@@ -2,6 +2,10 @@
 lab-*/build/**
 lab-*/solution/**
 
+# Archives
+lab-3-cc/**
+lab-4-cc/**
+
 # C++
 *.dSYM
 
