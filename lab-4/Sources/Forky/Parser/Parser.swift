@@ -121,7 +121,7 @@ struct Parser {
   /// Parses a read or write term.
   private mutating func parseReadOrWrite() throws -> Term {
     let _ = try take(.star) ?? expected("'*'")
-    let a = try parseTerm()
+    let a = try parseSimple()
     if take(.assign) == nil {
       return .read(from: a)
     } else {
