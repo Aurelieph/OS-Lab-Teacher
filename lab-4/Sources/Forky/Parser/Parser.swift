@@ -51,7 +51,7 @@ struct Parser {
   /// otherwise; parses the operand of such an application.
   private mutating func parseComparison() throws -> Term {
     var lhs = try parseSimple()
-    while let o = take(anyOf: [.eq, .ne]) {
+    while let o = take(anyOf: [.eq, .ne, .lt, .gt]) {
       let rhs = try parseTerm()
       lhs = .binary(BinaryOperator(o.tag)!, lhs, rhs)
     }
