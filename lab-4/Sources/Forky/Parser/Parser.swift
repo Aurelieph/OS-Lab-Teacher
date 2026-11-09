@@ -31,7 +31,7 @@ struct Parser {
   private mutating func parseTerm() throws -> Term {
     var lhs = try parseAddition()
     while let h = peek(), !h.isTermDelimiter {
-      lhs = try .application(lhs, parseTerm())
+      lhs = try .application(lhs, parseAddition())
     }
     return lhs
   }
